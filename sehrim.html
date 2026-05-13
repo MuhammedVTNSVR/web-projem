@@ -2,9 +2,22 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Şehrim Bursa - Muhammed Vatansever</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şehrim Bursa - Muhammed Vatansever (B251210574)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>.carousel-item img {height: 500px; object-fit: cover;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover; /* Resimlerin bozulmasını engeller */
+        }
+        .bursa-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/id/1029/1200/400');
+            background-size: cover;
+            color: white;
+            padding: 80px 0;
+        }
+    </style>
 </head>
 <body class="bg-light">
 
@@ -25,24 +38,88 @@
         </div>
     </nav>
 
-    <header class="text-center py-5 bg-success text-white shadow mb-4">
-        <h1>Bursa: Osmanlı'nın Başkenti</h1>
-        <p>Muhammed Vatansever - B251210574</p>
+    <header class="bursa-header text-center mb-5 shadow">
+        <div class="container">
+            <h1 class="display-3 fw-bold">YEŞİL BURSA</h1>
+            <p class="lead">Türkiye'nin en kalabalık 4. şehri | Nüfus: ~3.2 Milyon</p>
+            <p>Osmanlı'nın ilk başkenti ve sanayinin kalbi.</p>
+        </div>
     </header>
 
     <main class="container">
+        
+        <h2 class="text-center mb-4 text-success fw-bold">Gezilecek Yerler</h2>
         <div id="bursaSlider" class="carousel slide shadow-lg mb-5" data-bs-ride="carousel">
-            <div class="carousel-inner rounded">
-                <div class="carousel-item active"><img src="https://picsum.photos/id/1029/1200/500" class="d-block w-100"><div class="carousel-caption bg-dark bg-opacity-50"><h5>Uludağ</h5></div></div>
-                <div class="carousel-item"><img src="https://picsum.photos/id/1043/1200/500" class="d-block w-100"><div class="carousel-caption bg-dark bg-opacity-50"><h5>Ulu Camii</h5></div></div>
-                <div class="carousel-item"><img src="https://picsum.photos/id/1050/1200/500" class="d-block w-100"><div class="carousel-caption bg-dark bg-opacity-50"><h5>Cumalıkızık</h5></div></div>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#bursaSlider" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#bursaSlider" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#bursaSlider" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#bursaSlider" data-bs-slide-to="3"></button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#bursaSlider" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
-            <button class="carousel-control-next" type="button" data-bs-target="#bursaSlider" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+            <div class="carousel-inner rounded-3">
+                <div class="carousel-item active">
+                    <img src="https://picsum.photos/id/1029/1200/500" class="d-block w-100" alt="Uludağ">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>Uludağ</h5>
+                        <p>Kış turizminin vazgeçilmez adresi.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/id/1043/1200/500" class="d-block w-100" alt="Ulu Camii">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>Bursa Ulu Camii</h5>
+                        <p>20 kubbeli, hat sanatıyla bezeli bir şaheser.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/id/1050/1200/500" class="d-block w-100" alt="Cumalıkızık">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>Cumalıkızık Köyü</h5>
+                        <p>UNESCO Dünya Mirası: 700 yıllık tarihi doku.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/id/1015/1200/500" class="d-block w-100" alt="Tophane">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                        <h5>Tophane Saat Kulesi</h5>
+                        <p>Şehrin kuş bakışı izlendiği tarihi seyir noktası.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#bursaSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon shadow"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#bursaSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon shadow"></span>
+            </button>
         </div>
+
+        <section class="row g-4 mb-5 text-center">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-3">
+                    <h5 class="text-success fw-bold">Ekonomi</h5>
+                    <p>Türkiye'nin otomotiv ve tekstil sanayisinin merkezidir.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-3">
+                    <h5 class="text-success fw-bold">Gastronomi</h5>
+                    <p>Meşhur İskender Kebabı, Kestane Şekeri ve Şeftalisiyle bilinir.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-3">
+                    <h5 class="text-success fw-bold">Doğa</h5>
+                    <p>Uludağ, Mudanya sahilleri ve şifalı kaplıcalarıyla eşsizdir.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="text-center py-4 text-muted border-top">&copy; 2026 - B251210574</footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="text-center py-4 bg-white border-top text-muted">
+        <p>Muhammed Vatansever | B251210574 | Sakarya Üniversitesi</p>
+    </footer>
+
 </body>
 </html>

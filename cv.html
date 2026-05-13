@@ -2,20 +2,41 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>CV - Muhammed Vatansever</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özgeçmiş - Muhammed Vatansever</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Resim yerine geçecek şık harf logosu */
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            background-color: #1e7e34; /* Bursaspor Yeşili */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 4px solid white;
+        }
+        section { margin-bottom: 30px; }
+        .cv-card { border: none; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    </style>
 </head>
 <body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow mb-5">
         <div class="container">
             <a class="navbar-brand" href="index.html">Muhammed Vatansever</a>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto text-uppercase">
                     <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
                     <li class="nav-item"><a class="nav-link active" href="cv.html">CV</a></li>
                     <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
-                    <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Takımımız</a></li>
                     <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
                     <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
                     <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2" href="login.html">Giriş</a></li>
@@ -24,27 +45,50 @@
         </div>
     </nav>
 
-    <main class="container mt-5">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card p-3 shadow border-0 text-center">
-                    <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mb-3" alt="Profil">
-                    <h4>Muhammed Vatansever</h4>
-                    <p class="text-muted">B251210574</p>
+    <main class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 text-center">
+                <div class="card cv-card p-4 h-100">
+                    <div class="profile-avatar">MV</div>
+                    <h2 class="fw-bold">Muhammed Vatansever</h2>
+                    <p class="text-muted">Bilgisayar Mühendisliği Öğrencisi</p>
+                    <hr>
+                    <p class="text-start"><strong>Öğrenci No:</strong> B251210574</p>
+                    <p class="text-start"><strong>Okul:</strong> Sakarya Üniversitesi</p>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="card p-4 shadow border-0">
-                    <h2 class="text-primary border-bottom pb-2">Eğitim & Kişisel</h2>
-                    <p><strong>Okul:</strong> Sakarya Üniversitesi</p>
-                    <p><strong>Bölüm:</strong> Bilgisayar Mühendisliği</p>
-                    <p><strong>İlgi Alanları:</strong> Otomobil teknolojileri (BMW F10/F30), oyun stratejileri ve C++ programlama.</p>
+
+            <div class="col-lg-8">
+                <div class="card cv-card p-5 h-100">
+                    <header>
+                        <h1 class="text-primary fw-bold border-bottom pb-3 mb-4">Eğitim & Kişisel Bilgiler</h1>
+                    </header>
+
+                    <section>
+                        <h4 class="fw-bold">Eğitim Bilgileri</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-transparent"><strong>Üniversite:</strong> Sakarya Üniversitesi (2025 - Günümüz)</li>
+                            <li class="list-group-item bg-transparent"><strong>Bölüm:</strong> Bilgisayar Mühendisliği</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4 class="fw-bold">İlgi Alanları ve Yetkinlikler</h4>
+                        <div class="d-flex flex-wrap gap-2 mt-3">
+                            <span class="badge bg-success p-2">Oyunlar</span>
+                            <span class="badge bg-success p-2">Turizm</span>
+                            <span class="badge bg-success p-2">Arabalar</span>
+                            
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="text-center py-4 mt-5 text-muted border-top">&copy; 2026 - Muhammed Vatansever</footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="text-center py-5 mt-5 text-muted border-top bg-white">
+        <p>&copy; 2026 Muhammed Vatansever | Sakarya Üniversitesi</p>
+    </footer>
+
 </body>
 </html>

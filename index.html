@@ -3,40 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Projesi - Hakkında</title>
+    <title>Ana Sayfa - Muhammed Vatansever</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body { background-color: #f4f7f6; }
-        .hero-section { background: #212529; color: white; padding: 60px 0; }
-    </style>
 </head>
-<body>
+<body class="bg-light">
 
-    <header class="hero-section text-center shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
         <div class="container">
-            <h1>Muhammed Vatansever</h1>
-            <p class="lead">Web Teknolojileri Proje Ödevi - 1. Gün Çalışması</p>
+            <a class="navbar-brand" href="index.html">Muhammed Vatansever</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2" href="login.html">Giriş</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <main class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <div class="card p-4 shadow">
-                    <h3>Hoş Geldiniz</h3>
-                    <hr>
-                    <p>Bu web sitesi, Sakarya Üniversitesi Bilgisayar Mühendisliği Web Teknolojileri dersi kapsamında geliştirilmektedir.</p>
-                    <div class="mt-4">
-                        <a href="cv.html" class="btn btn-primary btn-lg">Özgeçmişimi Gör</a>
-                    </div>
-                </div>
+        <div class="card shadow p-5 border-0 rounded-4 text-center bg-white">
+            <h1 class="display-4 fw-bold text-primary">Muhammed Vatansever</h1>
+            <h3 class="text-muted mb-4">Öğrenci No: B251210574</h3>
+            <hr class="my-4">
+            <p class="lead">Sakarya Üniversitesi - Bilgisayar Mühendisliği öğrencisiyim. Bu proje Web Teknolojileri dersi kapsamında hazırlanmıştır.</p>
+            <div class="mt-4">
+                <a href="cv.html" class="btn btn-primary btn-lg px-5">Özgeçmişe Git</a>
             </div>
         </div>
     </main>
 
-    <footer class="text-center py-4 mt-5 border-top">
-        <p>&copy; 2026 Muhammed Vatansever</p>
-    </footer>
-
+    <footer class="text-center py-4 mt-5 text-muted border-top">&copy; 2026 - Muhammed Vatansever (B251210574)</footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

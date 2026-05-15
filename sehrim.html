@@ -9,30 +9,47 @@
         body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
         .section-title { border-left: 6px solid #198754; padding-left: 15px; margin: 40px 0 25px 0; font-weight: bold; }
         
-        /* Ödev Gereksinimi: Slider Ayarları */
+        /* Slider Ayarları */
         .carousel-item img { height: 500px; object-fit: cover; border-radius: 15px; }
         .carousel-caption { background: rgba(0, 0, 0, 0.7); border-radius: 10px; padding: 20px; }
         
         .info-card { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .ulu-camii-img { border-radius: 15px; width: 100%; height: auto; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        /* Giriş Butonu Stili */
+        .nav-link.login-btn {
+            background-color: #198754;
+            color: white !important;
+            border-radius: 8px;
+            padding: 8px 20px !important;
+            margin-left: 10px;
+            transition: 0.3s;
+        }
+        .nav-link.login-btn:hover {
+            background-color: #146c43;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">Muhammed Vatansever</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
                     <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
                     <li class="nav-item"><a class="nav-link active text-success" href="sehrim.html">Şehrim</a></li>
                     <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Takımımız</a></li>
                     <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
                     <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link login-btn" href="login.html">Giriş Yap</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -102,7 +119,7 @@
         </div>
     </div>
 
-    <footer class="text-center py-4">
+    <footer class="text-center py-4 bg-white border-top mt-5">
         <p class="mb-0 text-secondary">B251210574 - Muhammed Vatansever</p>
     </footer>
 

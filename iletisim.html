@@ -5,129 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İletişim - Muhammed Vatansever</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
-        .form-container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .error-text { color: red; font-size: 0.85rem; }
+        body { background-color: #f4f7f6; font-family: 'Segoe UI', sans-serif; }
+        .contact-container { max-width: 800px; margin: 50px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .form-label { font-weight: 600; color: #444; }
+        .section-title { border-left: 5px solid #198754; padding-left: 15px; margin-bottom: 30px; font-weight: bold; }
     </style>
 </head>
-<body class="bg-light">
+<body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">Muhammed Vatansever</a>
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
                     <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
                     <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
                     <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Takımımız</a></li>
                     <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2" href="login.html">Giriş</a></li>
+                    <li class="nav-item"><a class="nav-link active text-success" href="iletisim.html">İletişim</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container" id="app">
-        <div class="row justify-content-center">
-            <div class="col-md-8 form-container">
-                <h2 class="text-center mb-4 fw-bold">İletişim Formu</h2>
-                
-                <form id="contactForm">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Adınız</label>
-                            <input type="text" v-model="form.ad" class="form-control" id="ad">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Soyadınız</label>
-                            <input type="text" v-model="form.soyad" class="form-control" id="soyad">
-                        </div>
+        <div class="contact-container">
+            <h2 class="section-title text-success text-center">İletişim Formu</h2>
+            
+            <form id="contactForm">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Adınız</label>
+                        <input type="text" v-model="ad" id="name" class="form-control" placeholder="Adınız">
                     </div>
-
-                    <div class="mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Soyadınız</label>
+                        <input type="text" v-model="soyad" id="surname" class="form-control" placeholder="Soyadınız">
+                    </div>
+                    <div class="col-12">
                         <label class="form-label">E-posta Adresi</label>
-                        <input type="email" v-model="form.email" class="form-control" id="email">
+                        <input type="email" v-model="email" id="email" class="form-control" placeholder="muhammed@example.com">
                     </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Cinsiyet</label><br>
+                    <div class="col-12">
+                        <label class="form-label d-block">Cinsiyet</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" v-model="form.cinsiyet" value="Erkek">
-                            <label class="form-check-label">Erkek</label>
+                            <input class="form-check-input" type="radio" v-model="cinsiyet" value="Erkek" id="erkek">
+                            <label class="form-check-label" for="erkek">Erkek</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" v-model="form.cinsiyet" value="Kadın">
-                            <label class="form-check-label">Kadın</label>
+                            <input class="form-check-input" type="radio" v-model="cinsiyet" value="Kadın" id="kadin">
+                            <label class="form-check-label" for="kadin">Kadın</label>
                         </div>
                     </div>
-
-                    <div class="mb-3">
+                    <div class="col-12">
                         <label class="form-label">Mesajınız</label>
-                        <textarea class="form-control" v-model="form.mesaj" rows="4" id="mesaj"></textarea>
+                        <textarea class="form-control" v-model="mesaj" id="message" rows="4" placeholder="Mesajınızı buraya yazın..."></textarea>
                     </div>
 
-                    <div class="d-grid gap-2">
-                        <button type="button" @click="vueKontrol" class="btn btn-success">Vue.js ile Gönder (Framework Kontrol)</button>
-                        <button type="button" onclick="jsKontrol()" class="btn btn-secondary">Normal JS ile Gönder</button>
-                        <button type="reset" class="btn btn-outline-danger">Temizle</button>
+                    <div class="col-12 mt-4">
+                        <button type="button" @click="vueKontrol" class="btn btn-success w-100 mb-2 py-2 fw-bold">
+                            Vue.js ile Gönder (Framework Kontrol)
+                        </button>
+                        <button type="button" onclick="nativeJSKontrol()" class="btn btn-secondary w-100 mb-2 py-2">
+                            Normal JS ile Gönder
+                        </button>
+                        <button type="reset" @click="temizle" class="btn btn-outline-danger w-100 py-2">
+                            Temizle
+                        </button>
                     </div>
-                </form>
-
-                <div v-if="gonderildi" class="alert alert-info mt-4">
-                    <h5>Form Verileri Alındı:</h5>
-                    <p>Ad Soyad: {{ form.ad }} {{ form.soyad }}</p>
-                    <p>E-posta: {{ form.email }}</p>
-                    <p>Mesaj: {{ form.mesaj }}</p>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
-    <script>
-        // 1. NORMAL JAVASCRIPT KONTROLÜ (Hocanın istediği ilk yöntem)
-        function jsKontrol() {
-            var ad = document.getElementById('ad').value;
-            var email = document.getElementById('email').value;
-            
-            if(ad == "" || email == "") {
-                alert("Lütfen isim ve e-posta alanlarını boş bırakmayın!");
-            } else if(!email.includes("@")) {
-                alert("Geçerli bir e-posta adresi girin!");
-            } else {
-                alert("Normal JS Kontrolü: Başarılı!");
-            }
-        }
+    <footer class="text-center py-4 bg-white border-top mt-5">
+        <p class="mb-0 text-secondary">B251210574 - Muhammed Vatansever</p>
+    </footer>
 
-        // 2. VUE.JS KONTROLÜ (Hocanın istediği Framework yöntemi)
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        // --- 1. VUE.JS KONTROLÜ (Ödev Şartı) ---
         const { createApp } = Vue
         createApp({
             data() {
                 return {
-                    gonderildi: false,
-                    form: {
-                        ad: '',
-                        soyad: '',
-                        email: '',
-                        cinsiyet: '',
-                        mesaj: ''
-                    }
+                    ad: '',
+                    soyad: '',
+                    email: '',
+                    cinsiyet: '',
+                    mesaj: ''
                 }
             },
             methods: {
                 vueKontrol() {
-                    if(this.form.ad && this.form.email && this.form.mesaj) {
-                        this.gonderildi = true;
-                        console.log("Vue.js Form Verisi:", this.form);
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    
+                    if (!this.ad || !this.soyad || !this.email || !this.mesaj) {
+                        alert("HATA (Vue.js): Lütfen tüm alanları doldurunuz!");
+                    } else if (!emailRegex.test(this.email)) {
+                        alert("HATA (Vue.js): Geçersiz e-posta formatı!");
                     } else {
-                        alert("Vue.js uyarısı: Eksik alanları doldurun!");
+                        alert("BAŞARILI (Vue.js): Form doğrulandı. Bilgiler gönderiliyor...");
+                        // Formu PHP sayfasına yönlendirmek istersen:
+                        // document.getElementById('contactForm').submit();
                     }
+                },
+                temizle() {
+                    this.ad = ''; this.soyad = ''; this.email = ''; this.cinsiyet = ''; this.mesaj = '';
                 }
             }
         }).mount('#app')
+
+        // --- 2. NATIVE JS KONTROLÜ (Ödev Şartı) ---
+        function nativeJSKontrol() {
+            const ad = document.getElementById('name').value;
+            const soyad = document.getElementById('surname').value;
+            const email = document.getElementById('email').value;
+            
+            if (ad === "" || soyad === "" || email === "") {
+                alert("HATA (Native JS): Boş alan bırakmayınız!");
+            } else {
+                alert("BAŞARILI (Native JS): Kontrol sağlandı!");
+            }
+        }
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
